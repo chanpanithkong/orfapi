@@ -26,4 +26,9 @@ class tbusers(db.Model):
         self.address = address
         self.deptid = deptid
         self.positionid = positionid
-        
+
+    @classmethod
+    def find_by_userid(cls, userid) -> "tbusers":
+        return cls.query.filter_by(userid=userid).first()
+
+    
