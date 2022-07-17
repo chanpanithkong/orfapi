@@ -4,13 +4,13 @@ from flask_jwt_extended import JWTManager
 from marshmallow import ValidationError
 
 from flask_jwt_extended import JWTManager
-
+from functools import wraps
 
 from blacklist import BLACKLIST
 from src.config.db import db, app, api
 
 from src.control.wsusers import WsTokenRefresh, WsUserLogin, WsUserLogout
-from src.control.users import UserList, Users
+from src.control.users import UserList, Users, UserLogin
 
 @app.errorhandler(ValidationError)
 def handle_marshmallow_validation(err):
@@ -23,12 +23,15 @@ def check_if_token_in_blacklist(jwt_header, jwt_payload: dict):
     jti = jwt_payload["jti"]
     return jti in BLACKLIST
 
+# hello world!
+
 api.add_resource(WsUserLogin, "/wslogin")
 api.add_resource(WsTokenRefresh, "/wsrefresh")
 api.add_resource(WsUserLogout, "/wslogout")
 
 api.add_resource(UserList, "/userlist")
 api.add_resource(Users, "/userbyid/<userid>")
+api.add_resource(UserLogin, "/userlogin")
 
 
 if __name__ == "__main__":
