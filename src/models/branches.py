@@ -16,3 +16,7 @@ class tbbranches(db.Model):
         self.branchnamekh = branchnamekh
         self.details = details
         self.status = status
+
+    @classmethod
+    def find_by_branchcode(cls, branchcode) -> "tbbranches":
+        return cls.query.filter_by(branchcode=branchcode).first()

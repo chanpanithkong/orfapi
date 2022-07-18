@@ -3,7 +3,7 @@ from marshmallow_sqlalchemy import SQLAlchemyAutoSchema, auto_field
 from ..models.status import tbstatus
 from ..config.db import db
 
-class StatusSchema(SQLAlchemyAutoSchema):
+class SystemSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = tbstatus
         sqla_session = db.session

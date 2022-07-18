@@ -31,4 +31,6 @@ class tbusers(db.Model):
     def find_by_userid(cls, userid) -> "tbusers":
         return cls.query.filter_by(userid=userid).first()
 
+        
+
     
