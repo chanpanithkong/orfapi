@@ -2,10 +2,9 @@ from flask_restful import Resource
 from flask import jsonify, request
 from flask_jwt_extended import (
     create_access_token,
-    create_refresh_token,
+    get_jwt,
     jwt_required,
     JWTManager,
-    get_jwt,
     get_jwt_identity,
     set_access_cookies,
     unset_jwt_cookies
@@ -18,8 +17,11 @@ from ..models.wsuserschema import WsUserSchema
 from blacklist import BLACKLIST
 from ..libs.strings import gettext
 
+
+
 jwt = JWTManager(app)
 wsuser_schema = WsUserSchema()
+
 
 
 class WsUserLogin(Resource):
@@ -49,7 +51,7 @@ class WsUserLogout(Resource):
         resp = jsonify({'logout': True})
         
         unset_jwt_cookies(resp)
-
+        print(jti)
         return {'msg': "logout"}, 200
 
 
@@ -58,5 +60,6 @@ class WsTokenRefresh(Resource):
     @jwt_required()
     def post(cls):
         current_user = get_jwt_identity()
+        print(current_user)
         new_token = create_access_token(identity=current_user, fresh=False)
         return {"msg": "refresh_token","access_token":new_token}, 200
