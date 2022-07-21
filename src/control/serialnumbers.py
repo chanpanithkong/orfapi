@@ -14,9 +14,9 @@ jwt = JWTManager(app)
 class SerialNumbers(Resource):
     @classmethod
     @jwt_required()
-    def get(cls,serialnumbers):
+    def get(cls,serialnumber):
         try:  
-            serialnumbersdata = tbserialnumbers.query.filter_by(serialnumbers=serialnumbers).first()
+            serialnumbersdata = tbserialnumbers.query.filter_by(serialnumber=serialnumber).first()
             serialnumbers_schema = SerialNumberSchema()
             serialnumbers_data = serialnumbers_schema.dump(serialnumbersdata)
             return {"serialnumbers":serialnumbers_data}

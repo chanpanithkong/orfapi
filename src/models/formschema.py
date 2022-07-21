@@ -12,5 +12,5 @@ class FormSchema(SQLAlchemyAutoSchema):
     formcategoryid = auto_field()
     serialnumber = auto_field()
     fieldname = auto_field()
-    fieldcontorller = auto_field()
+    fieldcontroller = auto_field()
     status = auto_field()

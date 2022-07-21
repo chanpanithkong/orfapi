@@ -8,7 +8,7 @@ class tbbranches(db.Model):
     branchname = db.Column(db.String(100))
     branchnamekh = db.Column(db.String(255))
     details = db.Column(db.String(255))
-    status = db.Column(db.Integer(1))
+    status = db.Column(db.Integer)
     
     def __init__(self, brnachcode = None , branchname = None , branchnamekh = None , details = None, status = None):
         self.branchcode = brnachcode

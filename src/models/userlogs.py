@@ -4,7 +4,7 @@ class tbuserlogs(db.Model):
     
     userlogid = db.Column('userlogid', db.String, primary_key = True)
     activity = db.Column(db.String(150))
-    createddate = db.Column(db.Integer(255))
+    createddate = db.Column(db.String)
     createdby = db.Column(db.String(10))
     
     

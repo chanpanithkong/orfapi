@@ -6,13 +6,13 @@ class tbforms(db.Model):
     formcategoryid = db.Column(db.String(10))
     serialnumber = db.Column(db.String(10))
     fieldname = db.Column(db.String(255))
-    fieldcontroller = db.Column(db.Integer(1))
-    status = db.Column(db.Integer(1))
+    fieldcontroller = db.Column(db.Integer)
+    status = db.Column(db.Integer)
     
-    def __init__(self, formid = None, formcategoryid = None, serialnumber = None, fieldname = None, fieldcontorller = None, status = None):
+    def __init__(self, formid = None, formcategoryid = None, serialnumber = None, fieldname = None, fieldcontroller = None, status = None):
         self.formid = formid
         self.formcategoryid = formcategoryid
         self.serialnumber = serialnumber
         self.fieldname = fieldname
-        self.fieldcontroller = fieldcontorller    
+        self.fieldcontroller = fieldcontroller    
         self.status = status

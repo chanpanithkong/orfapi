@@ -13,9 +13,9 @@ jwt = JWTManager(app)
 class FormCategory(Resource):
     @classmethod
     @jwt_required()
-    def get(cls,formcateegoryid):
+    def get(cls,formcategoryid):
         try:  
-            formcategorydata = tbformcategories.query.filter_by(formcateegoryid=formcateegoryid).first()
+            formcategorydata = tbformcategories.query.filter_by(formcategoryid=formcategoryid).first()
             formcategory_schema = FormCategorySchema()
             formcategory_data = formcategory_schema.dump(formcategorydata)
             return {"formcategory":formcategory_data}

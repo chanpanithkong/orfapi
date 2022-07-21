@@ -9,6 +9,6 @@ class SystemSerialNumberSchema(SQLAlchemyAutoSchema):
         load_instance = True
 
     systemid = auto_field()
-    sertailnumber = auto_field()
+    serialnumber = auto_field()
     status = auto_field()
     details = auto_field()

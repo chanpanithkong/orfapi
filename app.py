@@ -12,19 +12,19 @@ from src.control.wsusers import WsTokenRefresh, WsUserLogin, WsUserLogout
 from src.control.users import UserList, Users, UserLogin, UserDelete,UserInsert, UserUpdate 
 
 from src.control.branches import Branch,BranchList
-# from src.control.departments import Department, DepartmentList
-# from src.control.formcategories import FormCategory,FormCategoryList
-# from src.control.forms import Form, FormList
-# from src.control.positions import Position, PositionList
-# from src.control.rolecategories import RoleCategory, RoleCategoryList
-# from src.control.roles import Role, RoleList
-# from src.control.serialnumbers import SerialNumbers, SerialNumbersList
-# from src.control.status import Status, StatusList
-# from src.control.systems import System, SystemList
-# from src.control.systemserialnumbers import SystemSertialNumber, SystemSertialNumberList
-# from src.control.userlogs import UserLog, UserLogList
-# from src.control.userrequestforms import UserRequestForm, UserRequestFormList
-# from src.control.userroles import UserRole, UserRoleSchema
+from src.control.departments import Department, DepartmentList
+from src.control.formcategories import FormCategory,FormCategoryList
+from src.control.forms import Form, FormList
+from src.control.positions import Position, PositionList
+from src.control.rolecategories import RoleCategory, RoleCategoryList
+from src.control.roles import Role, RoleList
+from src.control.serialnumbers import SerialNumbers, SerialNumbersList
+from src.control.status import Status, StatusList
+from src.control.systems import System, SystemList
+from src.control.systemserialnumbers import SystemSertialNumber, SystemSertialNumberList
+from src.control.userlogs import UserLog, UserLogList
+from src.control.userrequestforms import UserRequestForm, UserRequestFormList
+from src.control.userroles import UserRole, UserRoleList
 
 
 @app.errorhandler(ValidationError)
@@ -56,45 +56,45 @@ api.add_resource(UserLogin, "/userlogin")
 #brnaches
 api.add_resource(BranchList, "/branchlist")
 api.add_resource(Branch, "/branchbycode/<branchcode>")
-# #departments
-# api.add_resource(DepartmentList, "/departments")
-# api.add_resource(Department, "/departmentbyid/<deptid>")
-# #formcategories
-# api.add_resource(FormCategoryList, "/formcategorylist")
-# api.add_resource(FormCategory, "/formcategorybyid/<formid>")
-# #forms
-# api.add_resource(FormList, "/formlist")
-# api.add_resource(Form, "/formbyid/<formid>")
-# #positsions
-# api.add_resource(PositionList, "/positionlist")
-# api.add_resource(Position, "/positionbyid/<id>")
-# #rolecategories
-# api.add_resource(RoleCategoryList, "/rolecategorylist")
-# api.add_resource(RoleCategory, "/rolecategorybyid/<id>")
-# #roles
-# api.add_resource(RoleList, "/rolelist")
-# api.add_resource(Role, "/rolebyid/<id>")
-# #serialnumbers
-# api.add_resource(SerialNumbersList, "/serialnumberlist")
-# api.add_resource(SerialNumbers, "/serialnumberbyid/<id>")
-# #status
-# api.add_resource(StatusList, "/statuslist")
-# api.add_resource(Status, "/statusbyid/<id>")
-# #systems
-# api.add_resource(SystemList, "/systemlist")
-# api.add_resource(System, "/systembyid/<id>")
-# #systemserialnumbers
-# api.add_resource(SystemSertialNumber, "/systemserialnumberlist")
-# api.add_resource(SystemS, "/branchbycode/<branchcode>")
-# #userlog
-# api.add_resource(BranchList, "/branchlist")
-# api.add_resource(Branch, "/branchbycode/<branchcode>")
-# #userrequestforms
-# api.add_resource(BranchList, "/branchlist")
-# api.add_resource(Branch, "/branchbycode/<branchcode>")
-# #userroles
-# api.add_resource(BranchList, "/branchlist")
-# api.add_resource(Branch, "/branchbycode/<branchcode>")
+#departments
+api.add_resource(DepartmentList, "/departmentlist")
+api.add_resource(Department, "/departmentbyid/<deptid>")
+#formcategories
+api.add_resource(FormCategoryList, "/formcategorylist")
+api.add_resource(FormCategory, "/formcategorybyid/<formcategoryid>")
+#forms
+api.add_resource(FormList, "/formlist")
+api.add_resource(Form, "/formbyid/<formid>")
+#positsions
+api.add_resource(PositionList, "/positionlist")
+api.add_resource(Position, "/positionbyid/<positionid>")
+#rolecategories
+api.add_resource(RoleCategoryList, "/rolecategorylist")
+api.add_resource(RoleCategory, "/rolecategorybyid/<rolecategoryid>")
+#roles
+api.add_resource(RoleList, "/rolelist")
+api.add_resource(Role, "/rolebyid/<roleid>")
+#serialnumbers
+api.add_resource(SerialNumbersList, "/serialnumberlist")
+api.add_resource(SerialNumbers, "/serialnumberbyid/<serialnumber>")
+#status
+api.add_resource(StatusList, "/statuslist")
+api.add_resource(Status, "/statusbyid/<statusid>")
+#systems
+api.add_resource(SystemList, "/systemlist")
+api.add_resource(System, "/systembyid/<systemid>")
+#systemserialnumbers
+api.add_resource(SystemSertialNumberList, "/systemserialnumberlist")
+api.add_resource(SystemSertialNumber, "/systemserialnumberbyid/<systemid>")
+#userlog
+api.add_resource(UserLogList, "/userloglist")
+api.add_resource(UserLog, "/userlogbyid/<userlogid>")
+#userrequestforms
+api.add_resource(UserRequestFormList, "/userrequestformlist")
+api.add_resource(UserRequestForm, "/userrequestformbyid/<aid>")
+#userroles
+api.add_resource(UserRoleList, "/userrolelist")
+api.add_resource(UserRole, "/userrolebyid/<userid>")
 
 if __name__ == "__main__":
     db.init_app(app)

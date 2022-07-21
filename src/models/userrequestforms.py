@@ -4,7 +4,7 @@ class tbuserrequestforms(db.Model):
     
     aid= db.Column('aid', db.String, primary_key = True)
     formid = db.Column(db.String(10))
-    formcategoryid = db.Column(db.Integer(10))
+    formcategoryid = db.Column(db.Integer)
     serialnumber = db.Column(db.String(10))
     fieldname = db.Column(db.String(255))
     fieldvalue = db.Column(db.String(255))

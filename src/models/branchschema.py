@@ -8,7 +8,7 @@ class BranchSchema(SQLAlchemyAutoSchema):
         sqla_session = db.session
         load_instance = True
 
-    brnachcode = auto_field()
+    branchcode = auto_field()
     branchname = auto_field()
     branchnamekh = auto_field()
     details = auto_field()
